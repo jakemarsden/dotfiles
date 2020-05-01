@@ -11,3 +11,8 @@
     link:
       create: true
       relink: true
+
+- link:
+    ~/.config/git/:
+      path: config/git/*
+      glob: true
