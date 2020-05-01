@@ -1,28 +1,5 @@
-[alias]
-	# see: https://github.com/GitAlias/gitalias/blob/master/README.md#popular-examples
-	# see: https://stackoverflow.com/a/9463536/6314470
-	a = add
-	aa = add --all
-	ap = add --patch
-	b = branch
-	c = commit
-	ca = commit --amend
-	caa = commit --amend --no-edit
-	cam = commit --amend --message
-	ci = commit --interactive
-	d = diff
-	ds = diff --staged
-	dsw = diff --staged --ignore-all-space
-	dw = diff --ignore-all-space
-	f = fetch --all
-	fwl = push --force-with-lease
-	l = log
-	ll = log --abbrev-commit --all --boundary --decorate --graph --topo-order --date=short --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
-	rb = rebase
-	rbi = rebase --interactive
-	s = status --short
-	sh = show
-	sub = submodule
+[include]
+	path = aliases
 
 [branch]
 	autosetuprebase = always

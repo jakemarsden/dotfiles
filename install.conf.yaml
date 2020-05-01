@@ -35,9 +35,8 @@
     ~/.vimrc:
       path: config/vim/vimrc
 
-    ~/.config/git/:
-      path: config/git/*
-      glob: true
+    ~/.config/git:
+      path: config/git/
 
 - create:
   - ~/.vim/.backup
