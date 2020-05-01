@@ -1,24 +1,32 @@
+- defaults:
+    clean:
+      recursive: true
+    link:
+      create: true
+      relink: true
+
 - shell:
   - command: git submodule update --init --recursive
     description: Update submodules
 
 - clean:
     ~/:
-    ~/.config:
-      recursive: true
-
-- defaults:
-    link:
-      create: true
-      relink: true
+      recursive: false
+    ~/.bash_completion.d/:
+    ~/.config/:
 
 - link:
     ~/.bash_aliases:
       path: config/bash/bash_aliases
+    ~/.bash_completion:
+      path: config/bash/bash_completion
+    ~/.bash_completion.d/complete_alias:
+      path: config/bash/complete-alias/complete_alias
     ~/.bash_logout:
       path: config/bash/bash_logout
     ~/.bashrc:
       path: config/bash/bashrc
+
     ~/.profile:
       path: config/login/profile
 

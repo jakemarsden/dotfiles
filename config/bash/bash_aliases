@@ -1,26 +1,34 @@
+function mkalias() {
+  # see: https://unix.stackexchange.com/a/332522
+  alias "$1"="$2"
+  if [ "$(type -t _complete_alias)" = function ]; then
+    complete -F _complete_alias "$1"
+  fi
+}
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls --color=auto'
-  #alias dir='dir --color=auto'
-  #alias vdir='vdir --color=auto'
+  mkalias ls 'ls --color=auto'
+  #mkalias dir 'dir --color=auto'
+  #mkalias vdir 'vdir --color=auto'
 
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
+  mkalias grep 'grep --color=auto'
+  mkalias fgrep 'fgrep --color=auto'
+  mkalias egrep 'egrep --color=auto'
 fi
 
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alvF'
-alias tree='tree -v'
+mkalias l 'ls -CF'
+mkalias la 'ls -A'
+mkalias ll 'ls -alvF'
+mkalias tree 'tree -v'
 
-alias apti='apt install'
-alias apts='apt search'
-alias aptu='apt update && sudo apt upgrade'
-alias cls='clear'
-alias g='git'
-alias v='vim'
+mkalias apti 'apt install'
+mkalias apts 'apt search'
+mkalias aptu 'apt update && sudo apt upgrade'
+mkalias cls 'clear'
+mkalias g 'git'
+mkalias v 'vim'
 
 # see: https://linuxhandbook.com/run-alias-as-sudo/
-alias sudo='sudo '
+mkalias sudo 'sudo '

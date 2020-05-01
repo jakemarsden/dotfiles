@@ -46,3 +46,6 @@
 [submodule "config/vim/plugins/pack/itchyny/start/landscape.vim"]
 	path = config/vim/plugins/pack/itchyny/start/landscape.vim
 	url = https://github.com/itchyny/landscape.vim.git
+[submodule "config/bash/complete-alias"]
+	path = config/bash/complete-alias
+	url = https://github.com/cykerway/complete-alias.git
