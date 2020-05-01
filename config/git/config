@@ -11,17 +11,18 @@
 	cam = commit --amend --message
 	ci = commit --interactive
 	d = diff
-	dc = diff --cached
-	dcw = diff --cached --ignore-all-space
+	ds = diff --staged
+	dsw = diff --staged --ignore-all-space
 	dw = diff --ignore-all-space
 	f = fetch --all
 	fwl = push --force-with-lease
 	l = log
-	ll = log --abbrev-commit --all --boundary --decorate --graph --topo-order --date=short --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cbule[%cn]%Creset %Cblue%G?%Creset'
+	ll = log --abbrev-commit --all --boundary --decorate --graph --topo-order --date=short --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
 	rb = rebase
 	rbi = rebase --interactive
 	s = status --short
 	sh = show
+	sub = submodule
 
 [branch]
 	autosetuprebase = always
