@@ -17,13 +17,13 @@
 
 - link:
     ~/.bash_aliases:
-      path: config/bash/bash_aliases
+      path: config/bash/aliases
     ~/.bash_completion:
-      path: config/bash/bash_completion
+      path: config/bash/completion
     ~/.bash_completion.d/complete_alias:
       path: config/bash/complete-alias/complete_alias
     ~/.bash_logout:
-      path: config/bash/bash_logout
+      path: config/bash/logout
     ~/.bashrc:
       path: config/bash/bashrc
 
