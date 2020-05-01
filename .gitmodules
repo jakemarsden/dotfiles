@@ -1,3 +1,48 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "config/vim/plugins/pack/tpope/start/vim-sensible"]
+	path = config/vim/plugins/pack/tpope/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "config/vim/plugins/pack/tpope/start/vim-vinegar"]
+	path = config/vim/plugins/pack/tpope/start/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
+[submodule "config/vim/plugins/pack/tpope/start/vim-jdaddy"]
+	path = config/vim/plugins/pack/tpope/start/vim-jdaddy
+	url = https://github.com/tpope/vim-jdaddy.git
+[submodule "config/vim/plugins/pack/tpope/start/vim-commentary"]
+	path = config/vim/plugins/pack/tpope/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "config/vim/plugins/pack/vim-syntastic/start/syntastic"]
+	path = config/vim/plugins/pack/vim-syntastic/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "config/vim/plugins/pack/farmergreg/start/vim-lastplace"]
+	path = config/vim/plugins/pack/farmergreg/start/vim-lastplace
+	url = https://github.com/farmergreg/vim-lastplace.git
+[submodule "config/vim/plugins/pack/tpope/start/vim-fugitive"]
+	path = config/vim/plugins/pack/tpope/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "config/vim/plugins/pack/tpope/start/vim-abolish"]
+	path = config/vim/plugins/pack/tpope/start/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "config/vim/plugins/pack/tpope/start/vim-unimpaired"]
+	path = config/vim/plugins/pack/tpope/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "config/vim/plugins/pack/tpope/start/vim-repeat"]
+	path = config/vim/plugins/pack/tpope/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "config/vim/plugins/pack/glts/start/vim-magnum"]
+	path = config/vim/plugins/pack/glts/start/vim-magnum
+	url = https://github.com/glts/vim-magnum.git
+[submodule "config/vim/plugins/pack/glts/start/vim-radical"]
+	path = config/vim/plugins/pack/glts/start/vim-radical
+	url = https://github.com/glts/vim-radical.git
+[submodule "config/vim/plugins/pack/glts/start/vim-speeddating"]
+	path = config/vim/plugins/pack/tpope/start/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
+[submodule "config/vim/plugins/pack/itchyny/start/lightline.vim"]
+	path = config/vim/plugins/pack/itchyny/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "config/vim/plugins/pack/itchyny/start/landscape.vim"]
+	path = config/vim/plugins/pack/itchyny/start/landscape.vim
+	url = https://github.com/itchyny/landscape.vim.git

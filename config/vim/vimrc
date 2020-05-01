@@ -1,0 +1,61 @@
+set encoding=utf-8
+set nocompatible
+
+" Store all backups in same directory, named with full paths and timestamps
+set backup
+set backupdir=~/.vim/.backup//,.
+set backupskip+=~/.vim
+au BufWritePre * let &bex = '-' . strftime("%Y%m%d-%H%M%S%z") . '.bk'
+
+" Store all swapfiles in same directory, named with full paths
+set directory=~/.vim/.swap//,.
+set swapfile
+
+" Show whitespace
+set list
+
+" Show absolute line number for current line and relative for others
+set number
+set numberwidth=5
+set relativenumber
+
+" Disable line wrap by default
+set nowrap
+
+" Always show plaintext status and tab lines, even in GUI
+set guioptions-=e
+set laststatus=2
+set showtabline=2
+
+" Don't show `-- INSERT --`, `-- VISUAL --`, etc. when entering modes as
+" `lightline` plugin clearly indicatess it already
+set noshowmode
+
+colorscheme landscape
+set background=dark
+
+let g:lightline = {
+  \   "colorscheme": "landscape",
+  \   "active": {
+  \      "left": [
+  \        ["mode", "paste"],
+  \        ["gitbranch", "readonly", "filename", "modified"]
+  \      ]
+  \   },
+  \   "component_function": {
+  \     "gitbranch": "FugitiveHead"
+  \   }
+  \ }
+
+" autocmd User Flags call Hoist("window", "%{&ignorecase ? '[IC]' : ''}")
+" autocmd User Flags call Hoist("window", "SyntasticStatuslineFlag")
+
+" Use tree view by default in file explorer
+let g:netrw_liststyle=3
+
+" Open netrw when vim is started with no arguments
+" see: https://stackoverflow.com/a/46217143/6314470
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * if argc() == 0 | Explore! | endif
+augroup End

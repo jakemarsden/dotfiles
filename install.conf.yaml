@@ -22,6 +22,15 @@
     ~/.profile:
       path: config/login/profile
 
+    ~/.vim:
+      path: config/vim/plugins/
+    ~/.vimrc:
+      path: config/vim/vimrc
+
     ~/.config/git/:
       path: config/git/*
       glob: true
+
+- create:
+  - ~/.vim/.backup
+  - ~/.vim/.swap
