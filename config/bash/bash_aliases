@@ -1,0 +1,8 @@
+alias apti='apt install'
+alias aptu='apt update && sudo apt upgrade'
+alias cls='clear'
+alias g='git'
+alias v='vim'
+
+# see: https://linuxhandbook.com/run-alias-as-sudo/
+alias sudo='sudo '

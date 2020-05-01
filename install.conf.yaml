@@ -13,6 +13,15 @@
       relink: true
 
 - link:
+    ~/.bash_aliases:
+      path: config/bash/bash_aliases
+    ~/.bash_logout:
+      path: config/bash/bash_logout
+    ~/.bashrc:
+      path: config/bash/bashrc
+    ~/.profile:
+      path: config/login/profile
+
     ~/.config/git/:
       path: config/git/*
       glob: true
