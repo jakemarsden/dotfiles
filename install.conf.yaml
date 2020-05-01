@@ -1,0 +1,13 @@
+- shell:
+  - command: git submodule update --init --recursive
+    description: Update submodules
+
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
+
+- defaults:
+    link:
+      create: true
+      relink: true
