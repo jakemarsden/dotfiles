@@ -11,6 +11,14 @@ git clone --recurse-submodules https://github.com/jakemarsden/dotfiles.git ~/.do
 source ~/.profile
 ```
 
+Note that configurations are only linked for programs which are actually
+installed at the time of `~/.dotfiles/install`. Whether a prograim is installed
+is generally based on
+[`command -v`](http://man7.org/linux/man-pages/man1/command.1p.html).
+
+It may be necessary to re-run `~/.dotfiles/install` *after* installing a
+package.
+
 ## Projects used
 
 - [anishathalye/dotbot](https://github.com/anishathalye/dotbot)

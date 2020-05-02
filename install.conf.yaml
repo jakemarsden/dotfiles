@@ -15,37 +15,74 @@
     ~/.bash_completion.d/:
     ~/.config/:
 
+# TODO: Write a Dotbot directive plugin to allow `create[].if` ??
+#   - see: https://github.com/anishathalye/dotbot#plugins
+#   - see: https://github.com/anishathalye/dotbot/issues/65
+#   - e.g.:
+# - create:
+#   ~/.vim/.backup/:
+#     if: |
+#       command -v vim > /dev/null
+#   ~/.vim/.swap/:
+#     if: |
+#       command -v vim > /dev/null
+#   ~/.youtube-dl/:
+#     if: |
+#       command -v youtube-dl > /dev/null
+#   ~/.youtube-dl/.cache/:
+#     if: |
+#       command -v youtube-dl > /dev/null
 - create:
-  - ~/.vim/.backup
-  - ~/.vim/.swap
+  - ~/.vim/.backup/
+  - ~/.vim/.swap/
   - ~/.youtube-dl/
   - ~/.youtube-dl/.cache/
 
 - link:
-    ~/.bash_aliases:
-      path: config/bash/aliases
-    ~/.bash_completion:
-      path: config/bash/completion
-    ~/.bash_completion.d/complete_alias:
-      path: config/bash/complete-alias/complete_alias
-    ~/.bash_logout:
-      path: config/bash/logout
-    ~/.bashrc:
-      path: config/bash/bashrc
-
     ~/.profile:
       path: config/profile/profile
 
+    ~/.bash_aliases:
+      path: config/bash/aliases
+      if: |
+        command -v bash > /dev/null
+    ~/.bash_completion:
+      path: config/bash/completion
+      if: |
+        command -v bash > /dev/null
+    ~/.bash_completion.d/complete_alias:
+      path: config/bash/complete-alias/complete_alias
+      if: |
+        command -v bash > /dev/null
+    ~/.bash_logout:
+      path: config/bash/logout
+      if: |
+        command -v bash > /dev/null
+    ~/.bashrc:
+      path: config/bash/bashrc
+      if: |
+        command -v bash > /dev/null
+
     ~/.vim/pack:
       path: config/vim/pack/
+      if: |
+        command -v vim > /dev/null
     ~/.vimrc:
       path: config/vim/vimrc
+      if: |
+        command -v vim > /dev/null
 
     ~/.config/git:
       path: config/git/
+      if: |
+        command -v git > /dev/null
 
     ~/.config/nano:
       path: config/nano/
+      if: |
+        command -v nano > /dev/null
 
     ~/.config/youtube-dl:
       path: config/youtube-dl/
+      if: |
+        command -v youtube-dl > /dev/null
