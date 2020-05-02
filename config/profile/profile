@@ -8,6 +8,10 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Set a sensible umask on Windows Subsystem for Linux (WSL) if needed
+# see: https://github.com/microsoft/WSL/issues/352
+grep -iqF microsoft /proc/version && [ "$(umask)" -eq 0 ] && umask 022
+
 # Set a default display
 # Use local X server on Windows Subsystem for Linux (WSL)
 [ -z "$DISPLAY" ] && export DISPLAY=:0
