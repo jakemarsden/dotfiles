@@ -15,6 +15,10 @@
     ~/.bash_completion.d/:
     ~/.config/:
 
+- create:
+  - ~/.vim/.backup
+  - ~/.vim/.swap
+
 - link:
     ~/.bash_aliases:
       path: config/bash/aliases
@@ -30,8 +34,8 @@
     ~/.profile:
       path: config/profile/profile
 
-    ~/.vim:
-      path: config/vim/plugins/
+    ~/.vim/pack:
+      path: config/vim/pack/
     ~/.vimrc:
       path: config/vim/vimrc
 
@@ -40,7 +44,3 @@
 
     ~/.config/nano:
       path: config/nano/
-
-- create:
-  - ~/.vim/.backup
-  - ~/.vim/.swap
