@@ -18,6 +18,8 @@
 - create:
   - ~/.vim/.backup
   - ~/.vim/.swap
+  - ~/.youtube-dl/
+  - ~/.youtube-dl/.cache/
 
 - link:
     ~/.bash_aliases:
@@ -44,3 +46,6 @@
 
     ~/.config/nano:
       path: config/nano/
+
+    ~/.config/youtube-dl:
+      path: config/youtube-dl/
