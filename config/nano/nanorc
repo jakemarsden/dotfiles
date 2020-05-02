@@ -1,0 +1,20 @@
+set autoindent
+set constantshow
+set historylog
+set linenumbers
+set morespace
+set nowrap
+set positionlog
+set regexp
+set smarthome
+set suspend
+set tabsize 4
+
+set functioncolor magenta
+set keycolor brightmagenta
+set numbercolor magenta
+set selectedcolor brightwhite,magenta
+set statuscolor brightwhite,black
+set titlecolor brightwhite,black
+
+include "/usr/share/nano/*.nanorc"

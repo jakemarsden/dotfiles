@@ -38,6 +38,9 @@
     ~/.config/git:
       path: config/git/
 
+    ~/.config/nano:
+      path: config/nano/
+
 - create:
   - ~/.vim/.backup
   - ~/.vim/.swap
