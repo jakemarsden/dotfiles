@@ -9,7 +9,9 @@
 	ca = commit --amend
 	caa = commit --amend --no-edit
 	cam = commit --amend --message
+	cho = checkout
 	ci = commit --interactive
+	cm = commit --message
 	d = diff
 	ds = diff --staged
 	dsw = diff --staged --ignore-all-space
