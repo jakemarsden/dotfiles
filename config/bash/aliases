@@ -1,14 +1,10 @@
-if [ -f ~/.bash_completion.d/complete_alias ]; then
-  . ~/.bash_completion.d/complete_alias
-fi
-
 function mkalias() {
   # see: https://unix.stackexchange.com/a/332522
   alias "$1"="$2"
-  if [ "$(type -t _complete_alias)" = function ]; then
-    complete -F _complete_alias "$1"
-  fi
+  [ "$(type -t _complete_alias)" = function ] && complete -F _complete_alias "$1"
 }
+
+[ -f ~/.bash_completion.d/complete_alias ] && . ~/.bash_completion.d/complete_alias
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

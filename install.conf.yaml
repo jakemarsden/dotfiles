@@ -28,7 +28,7 @@
       path: config/bash/bashrc
 
     ~/.profile:
-      path: config/login/profile
+      path: config/profile/profile
 
     ~/.vim:
       path: config/vim/plugins/

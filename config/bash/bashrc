@@ -101,11 +101,4 @@ if ! shopt -oq posix; then
 fi
 
 # enable thefuck if installed
-if [ -f /usr/local/bin/thefuck ]; then
-  eval $(thefuck --alias --enable-experimental-instant-mode)
-fi
-
-# use the local X server on Windows Subsystem for Linux (WSL)
-if [ -f /bin/wslpath ]; then
-  export DISPLAY=localhost:0.0
-fi
+[ -f /usr/local/bin/thefuck ] && eval "$(thefuck --alias --enable-experimental-instant-mode)"
