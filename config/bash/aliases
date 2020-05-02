@@ -1,3 +1,7 @@
+if [ -f ~/.bash_completion.d/complete_alias ]; then
+  . ~/.bash_completion.d/complete_alias
+fi
+
 function mkalias() {
   # see: https://unix.stackexchange.com/a/332522
   alias "$1"="$2"
