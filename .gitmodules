@@ -44,8 +44,11 @@
 	path = config/vim/plugins/pack/itchyny/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule "config/vim/plugins/pack/itchyny/start/landscape.vim"]
-	path = config/vim/plugins/pack/itchyny/start/landscape.vim
+	path = config/vim/plugins/pack/itchyny/opt/landscape.vim
 	url = https://github.com/itchyny/landscape.vim.git
 [submodule "config/bash/complete-alias"]
 	path = config/bash/complete-alias
 	url = https://github.com/cykerway/complete-alias.git
+[submodule "config/vim/plugins/pack/rakr/opt/vim-one"]
+	path = config/vim/plugins/pack/rakr/opt/vim-one
+	url = https://github.com/rakr/vim-one.git

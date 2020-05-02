@@ -1,1 +1,4 @@
-config/vim/plugins/.*
+config/vim/plugins/.backup
+config/vim/plugins/.swap
+config/vim/plugins/.netrwhist
+config/vim/plugins/tags

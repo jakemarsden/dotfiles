@@ -31,24 +31,44 @@ set showtabline=2
 " `lightline` plugin clearly indicatess it already
 set noshowmode
 
-colorscheme landscape
+colorscheme one
 set background=dark
 
 let g:lightline = {
-  \   "colorscheme": "landscape",
+  \   "colorscheme": "one",
   \   "active": {
-  \      "left": [
-  \        ["mode", "paste"],
-  \        ["gitbranch", "readonly", "filename", "modified"]
-  \      ]
+  \     "left": [
+  \       ["mode", "paste"],
+  \       ["gitbranch", "readonly", "filename"]
+  \     ],
+  \     "right": [
+  \       ["lineinfo"],
+  \       ["lineinfototal"],
+  \       ["percent"],
+  \       ["fileformat"],
+  \       ["fileencoding"],
+  \       ["filetype"]
+  \     ]
   \   },
   \   "component_function": {
-  \     "gitbranch": "FugitiveHead"
+  \     "filename": "LightlineFilename",
+  \     "gitbranch": "FugitiveHead",
+  \     "lineinfototal": "LightlineLineinfototal"
   \   }
   \ }
 
-" autocmd User Flags call Hoist("window", "%{&ignorecase ? '[IC]' : ''}")
-" autocmd User Flags call Hoist("window", "SyntasticStatuslineFlag")
+function! LightlineFilename()
+  let path = expand('%')
+  let mod = &modified ? '*' : ''
+  return path . mod
+endfunction
+
+function! LightlineLineinfototal()
+  " Shows `[total line count]:[length of line under cursor]`
+  let rows = line('$')
+  let cols = strlen(getline('.'))
+  return rows . ':' . cols
+endfunction
 
 " Use tree view by default in file explorer
 let g:netrw_liststyle=3
@@ -58,4 +78,11 @@ let g:netrw_liststyle=3
 augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * if argc() == 0 | Explore! | endif
+augroup End
+
+" Reload vim config on save
+" see: https://superuser.com/a/1120318
+augroup vimrc
+  autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+  autocmd! BufWritePost $MYGVIMRC if has ('gui_running') | source % | echom "Reloaded " . $MYGVIMRC | endif | redraw
 augroup End
