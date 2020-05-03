@@ -31,6 +31,10 @@ package.
 
 - [cykerway/complete-alias](https://github.com/cykerway/complete-alias)
 
+### Nano
+
+- [scopatz/nanorc](https://github.com/scopatz/nanorc)
+
 ### Vim
 
 - [farmergreg/vim-lastplace](https://github.com/farmergreg/vim-lastplace)

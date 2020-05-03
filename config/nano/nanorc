@@ -8,7 +8,7 @@ set positionlog
 set regexp
 set smarthome
 set suspend
-set tabsize 4
+set tabsize 2
 
 set functioncolor magenta
 set keycolor brightmagenta
@@ -17,4 +17,5 @@ set selectedcolor brightwhite,magenta
 set statuscolor brightwhite,black
 set titlecolor brightwhite,black
 
-include "/usr/share/nano/*.nanorc"
+include /usr/share/nano/*.nanorc
+include ~/.config/nano/syntax/*.nanorc
