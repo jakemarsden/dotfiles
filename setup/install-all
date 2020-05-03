@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
 DIR="$(dirname "$0")"
+ESSENTIAL="$DIR"/essential/install
+
+apt-get update || exit
+
+echo
+echo
+echo "$ESSENTIAL"
+echo
+"$ESSENTIAL" || exit
 
 for f in "$DIR"/*/install; do
+  [ "$f" = "$ESSENTIAL" ] && continue
   echo
   echo
   echo "$f"
