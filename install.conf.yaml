@@ -83,6 +83,12 @@
       if: |
         command -v shellcheck > /dev/null
 
+    ~/.config/thefuck:
+      path: config/thefuck/*
+      glob: true
+      if : |
+        command -v thefuck > /dev/null
+
     ~/.vim/pack:
       path: config/vim/pack/
       if: |
