@@ -18,10 +18,10 @@ if [ -x /usr/bin/dircolors ]; then
   mkalias egrep 'egrep --color=auto'
 fi
 
-mkalias l 'ls -CF'
-mkalias la 'ls -A'
-mkalias ll 'ls -alvF'
-mkalias tree 'tree -v'
+mkalias l 'ls -C --classify'
+mkalias la 'ls --almost-all'
+mkalias ll 'ls -l -all --classify --group-directories-first --human-readable'
+mkalias tree 'tree -v --dirsfirst'
 
 mkalias apti 'apt install'
 mkalias apts 'apt search'
