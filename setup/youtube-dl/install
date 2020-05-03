@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# see: https://github.com/ytdl-org/youtube-dl/blob/master/README.md#installation
+
+NAME=youtube-dl
+BIN_URL=https://yt-dl.org/downloads/latest/youtube-dl
+SUM_URL=https://yt-dl.org/downloads/latest/SHA2-256SUMS
+
+INSTALL_DIR=/opt/"$NAME"
+BIN="$INSTALL_DIR"/"$NAME"
+SUM="$INSTALL_DIR"/"$NAME".sha256sum
+
+LINK_DIR=/usr/local/bin
+LINK="$LINK_DIR"/"$NAME"
+
+mkdir -p "$INSTALL_DIR" \
+    && wget "$SUM_URL" -O "$SUM" \
+    && wget -c "$BIN_URL" -O "$BIN" \
+    && chmod 644 "$SUM" \
+    && chmod 755 "$BIN" \
+    && (cd "$INSTALL_DIR" && sha256sum --check --ignore-missing --strict "$SUM") \
+    && ln -fs "$BIN" "$LINK" \
+    && youtube-dl --version

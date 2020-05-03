@@ -63,6 +63,26 @@
       if: |
         command -v bash > /dev/null
 
+    ~/.config/git:
+      path: config/git/
+      if: |
+        command -v git > /dev/null
+
+    ~/.gradle/gradle.properties:
+      path: config/gradle/gradle.properties
+      if: |
+        command -v gradle > /dev/null
+
+    ~/.config/nano:
+      path: config/nano/
+      if: |
+        command -v nano > /dev/null
+
+    ~/.shellcheckrc:
+      path: config/shellcheck/shellcheckrc
+      if: |
+        command -v shellcheck > /dev/null
+
     ~/.vim/pack:
       path: config/vim/pack/
       if: |
@@ -71,16 +91,6 @@
       path: config/vim/vimrc
       if: |
         command -v vim > /dev/null
-
-    ~/.config/git:
-      path: config/git/
-      if: |
-        command -v git > /dev/null
-
-    ~/.config/nano:
-      path: config/nano/
-      if: |
-        command -v nano > /dev/null
 
     ~/.config/youtube-dl:
       path: config/youtube-dl/

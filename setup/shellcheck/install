@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# see: https://github.com/koalaman/shellcheck/blob/master/README.md#installing
+
+NAME=shellcheck
+BASE_URL=https://github.com/koalaman/shellcheck/releases/download
+
+INSTALL_DIR=/opt/"$NAME"
+BIN="$INSTALL_DIR"/"$NAME"
+
+LINK_DIR=/usr/local/bin
+LINK="$LINK_DIR"/"$NAME"
+
+ARCH_LINUX_64=linux.x86_64.tar.xz
+ARCH_LINUX_ARM32=linux.armv6hf.tar.xz
+ARCH_LINUX_ARM64=linux.aarch64.tar.xz
+ARCH_MACOS_64=darwin.x86_64.tar.xz
+ARCH_WINDOWS_32=zip
+# see: https://en.wikipedia.org/wiki/Uname#Examples
+# see: https://stackoverflow.com/a/45125525
+case "$OSTYPE" in
+  linux-gnu*)
+    case "$(uname -m)" in
+      aarch64*|arm64*|armv8*)
+        ARCH="$ARCH_LINUX_ARM64"
+        ;;
+      arm*|armv7*)
+        ARCH="$ARCH_LINUX_ARM32"
+        ;;
+      *|x86_64)
+        ARCH="$ARCH_LINUX_64"
+        ;;
+    esac
+    ;;
+  darwin*)
+    ARCH="$ARCH_MACOS_64"
+    ;;
+  msys*|win*)
+    ARCH="$ARCH_WINDOWS_32"
+    ;;
+esac
+
+[ -z "$ARCH" ] \
+    && {
+      echo "$NAME: Error: Unsupported architecture \"$OSTYPE\" / \"$(uname -m)\"";
+      exit 1;
+    }
+
+CHANNEL_STABLE=stable
+CHANNEL_LATEST=latest
+CHANNEL="$CHANNEL_STABLE"
+
+URL="$BASE_URL"/"$CHANNEL"/shellcheck-"$CHANNEL"."$ARCH"
+
+mkdir -p "$INSTALL_DIR" \
+    && wget "$URL" -O - \
+    | tar -xJ --recursive-unlink --strip-components=1 -C "$INSTALL_DIR" \
+    && chmod 755 "$BIN" \
+    && ln -fs "$BIN" "$LINK" \
+    && shellcheck --version

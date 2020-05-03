@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+DIR="$(dirname "$0")"
+
+for f in "$DIR"/*/remove; do
+  echo
+  echo
+  echo "$f"
+  echo
+  "$f" || exit
+done
+
+apt-get update

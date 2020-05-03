@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+NAME=gradle
+INSTALL_DIR=/opt/"$NAME"
+LINK_DIR=/usr/local/bin
+LINK="$LINK_DIR"/"$NAME"
+
+[ -x "$BIN" ] && "$BIN" --stop || true
+[ -L "$LINK" ] && rm "$LINK" || true
+[ -d "$INSTALL_DIR" ] && rm -r "$INSTALL_DIR" || true

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+NAME=nodejs
+PKG_NAME=nodejs
+PKG_DOMAIN=deb.nodesource.com
+PKG_SOURCE_LIST=/etc/apt/sources.list.d/"$PKG_DOMAIN".list
+
+command -v apt > /dev/null \
+    || {
+      echo "$NAME: Error: Unsupported package manager";
+      exit 1;
+    }
+
+apt-get remove --autoremove --purge -y "$PKG_NAME"
+[ -f "$PKG_SOURCE_LIST" ] && rm "$PKG_SOURCE_LIST" || true

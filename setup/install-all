@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+DIR="$(dirname "$0")"
+
+for f in "$DIR"/*/install; do
+  echo
+  echo
+  echo "$f"
+  echo
+  "$f" || exit
+done

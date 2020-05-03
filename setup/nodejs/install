@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# see: https://github.com/nodesource/distributions#debmanual
+
+NAME=nodejs
+VERSION=14.x
+PKG_NAME=nodejs
+PKG_DOMAIN=deb.nodesource.com
+
+PKG_KEY_URL=https://"$PKG_DOMAIN"/gpgkey/nodesource.gpg.key
+PKG_REPO_URL=https://"$PKG_DOMAIN"/node_"$VERSION"/
+PKG_SOURCE_LIST=/etc/apt/sources.list.d/"$PKG_DOMAIN".list
+
+command -v apt > /dev/null \
+    || {
+      echo "$NAME: Error: Unsupported package manager";
+      exit 1;
+    }
+
+wget -qO - "$PKG_KEY_URL" \
+    | apt-key add - \
+    && tee "$PKG_SOURCE_LIST" > /dev/null << EOF
+deb $PKG_REPO_URL $(lsb_release -cs) main
+# deb-src $PKG_REPO_URL $(lsb_release -cs) main
+EOF
+
+exit_code="$?"
+[ "$exit_code" -ne 0 ] && exit "$exit_code"
+
+chown root:root "$PKG_SOURCE_LIST" \
+    && chmod 644 "$PKG_SOURCE_LIST" \
+    && apt-get update \
+        -o Dir::Etc::sourcelist="$PKG_SOURCE_LIST" \
+        -o Dir::Etc::sourceparts="-" \
+        -o APT::Get::List-Cleanup="0" \
+    && apt-get install -y "$PKG_NAME" \
+    && node --version \
+    && npm install --global npm@latest

@@ -1,12 +1,16 @@
 # Dotfiles
 
-My personal dotfiles, powered by
+My personal dotfiles and setup scripts, powered by
 [Dotbot](https://github.com/anishathalye/dotbot).
 
 ## Usage
 
 ```bash
 git clone --recurse-submodules https://github.com/jakemarsden/dotfiles.git ~/.dotfiles
+
+# Optional: ~/.dotfiles/setup/<program>/install
+# Optional: ~/.dotfiles/setup/install-all
+
 ~/.dotfiles/install
 source ~/.profile
 ```

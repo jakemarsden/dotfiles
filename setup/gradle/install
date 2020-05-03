@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# see: https://gradle.org/install/#manually
+
+NAME=gradle
+VERSION=6.3
+DISTRIBUTION_TYPE=all
+ZIP_NAME=gradle-"$VERSION"-"$DISTRIBUTION_TYPE".zip
+SUM_NAME="$ZIP_NAME".sha256
+
+BASE_URL=https://services.gradle.org/distributions
+ZIP_URL="$BASE_URL"/"$ZIP_NAME"
+SUM_URL="$BASE_URL"/"$SUM_NAME"
+
+INSTALL_DIR=/opt/"$NAME"
+ZIP="$INSTALL_DIR"/"$ZIP_NAME"
+SUM="$INSTALL_DIR"/"$SUM_NAME"
+BIN="$INSTALL_DIR"/gradle-"$VERSION"/bin/gradle
+
+LINK_DIR=/usr/local/bin
+LINK="$LINK_DIR"/"$NAME"
+
+mkdir -p "$INSTALL_DIR" \
+    && wget "$SUM_URL" -O "$SUM" \
+    && wget -c "$ZIP_URL" -O "$ZIP" \
+    && sed -i "s/$/ $ZIP_NAME/" "$SUM" \
+    && (cd "$INSTALL_DIR" && sha256sum --check --ignore-missing --strict "$SUM") \
+    && unzip -oq -d "$INSTALL_DIR" "$ZIP" \
+    && chmod 755 "$BIN" \
+    && ln -fs "$BIN" "$LINK" \
+    && gradle --version
