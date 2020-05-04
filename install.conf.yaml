@@ -98,6 +98,11 @@
       if: |
         command -v vim > /dev/null
 
+    ~/.config/Code/User/settings.json:
+      path: config/vscode/settings.json
+      if: |
+        command -v code > /dev/null
+
     ~/.config/youtube-dl:
       path: config/youtube-dl/
       if: |
