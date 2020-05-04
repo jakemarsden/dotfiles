@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+NAME=disable-odroid-led
+
+INSTALL_DIR=/opt/"$NAME"
+SERVICE_NAME=disable-odroid-led.service
+
+LINK_DIR=/usr/local/bin
+LINK="$LINK_DIR"/"$NAME"
+
+systemctl disable "$SERVICE" || true
+[ -L "$LINK" ] && rm "$LINK" || true
+[ -d "$INSTALL_DIR" ] && rm -r "$INSTALL_DIR" || true

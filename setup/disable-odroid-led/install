@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# see: https://gist.github.com/jakemarsden/869a1bfce0710c63d6d39b8f736ae842
+
+NAME=disable-odroid-led
+CLONE_URL=https://gist.github.com/869a1bfce0710c63d6d39b8f736ae842.git
+
+INSTALL_DIR=/opt/"$NAME"
+BIN="$INSTALL_DIR"/disable-odroid-led
+SERVICE="$INSTALL_DIR"/disable-odroid-led.service
+
+LINK_DIR=/usr/local/bin
+LINK="$LINK_DIR"/"$NAME"
+
+if [ ! -f /proc/device-tree/model ] || [ "$(tr -d '\0' < /proc/device-tree/model)" != "Hardkernel Odroid XU4" ]; then
+  echo "Skipping $NAME install"
+  exit 0
+fi
+
+if [ -d "$INSTALL_DIR"/.git ]; then
+  (cd "$INSTALL_DIR" && git pull --ff-only) || exit 1
+else
+  git clone "$CLONE_URL" "$INSTALL_DIR" || exit 2
+fi
+
+ln -fs "$BIN" "$LINK"
+systemctl enable "$SERVICE"
