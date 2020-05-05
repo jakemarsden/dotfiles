@@ -1,7 +1,7 @@
 # Dotfiles
 
 My personal dotfiles and setup scripts, powered by
-[Dotbot](https://github.com/anishathalye/dotbot).
+[Dotbot](https://github.com/anishathalye/dotbot)
 
 ## Usage
 

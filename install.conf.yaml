@@ -5,10 +5,6 @@
       create: true
       relink: true
 
-- shell:
-  - description: Update submodules
-    command: git submodule update --init --recursive
-
 - clean:
     ~/:
       recursive: false

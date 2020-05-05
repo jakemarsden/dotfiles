@@ -11,6 +11,19 @@ au BufWritePre * let &bex = '-' . strftime("%Y%m%d-%H%M%S%z") . '.bk'
 set directory=~/.vim/.swap//,.
 set swapfile
 
+" Enable filetype selection
+" see: https://vi.stackexchange.com/a/10125
+filetype plugin indent on
+
+" Indent by 2 spaces by default, and expand <tab> to two spaces, but show
+" pre-existing <tab>s as 4 characters wide
+set shiftwidth=2
+set tabstop=4
+set expandtab
+
+" Disable line wrap by default
+set nowrap
+
 " Show whitespace
 set list
 
@@ -18,9 +31,6 @@ set list
 set number
 set numberwidth=5
 set relativenumber
-
-" Disable line wrap by default
-set nowrap
 
 " Always show plaintext status and tab lines, even in GUI
 set guioptions-=e
@@ -30,6 +40,9 @@ set showtabline=2
 " Don't show `-- INSERT --`, `-- VISUAL --`, etc. when entering modes as
 " `lightline` plugin clearly indicatess it already
 set noshowmode
+
+" Show in-progress normal mode commands under the status bar
+set showcmd
 
 colorscheme one
 set background=dark

@@ -23,12 +23,21 @@ mkalias la 'ls --almost-all'
 mkalias ll 'ls -l -all --classify --group-directories-first --human-readable'
 mkalias tree 'tree -v --dirsfirst'
 
+function touchexe() {
+  touch "$1" && chmod +x "$1"
+}
+
 mkalias apti 'apt install'
+mkalias aptr 'apt remove --autoremove --purge'
 mkalias apts 'apt search'
 mkalias aptu 'apt update && sudo apt upgrade'
+
+mkalias clipfile 'xclip -sel clip <'
 mkalias cls 'clear'
+
+mkalias e 'vim'
+mkalias er 'vim -R'
 mkalias g 'git'
-mkalias v 'vim'
 
 # see: https://linuxhandbook.com/run-alias-as-sudo/
 mkalias sudo 'sudo '
