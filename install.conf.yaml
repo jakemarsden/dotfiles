@@ -69,6 +69,11 @@
       if: |
         command -v gradle > /dev/null
 
+    ~/.config/htop:
+      path: config/htop/
+      if: |
+        command -v htop > /dev/null
+
     ~/.config/nano:
       path: config/nano/
       if: |
