@@ -14,6 +14,7 @@
   "editor.wordWrapColumn": 100,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "extensions.showRecommendationsOnlyOnDemand": true,
   "files.associations": {
     "*.log*": "log"
   },

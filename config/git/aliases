@@ -13,6 +13,9 @@
 	ci = commit --interactive
 	cm = commit --message
 	d = diff
+	dd = diff HEAD
+	ddw = diff --ignore-all-space HEAD
+	ddww = diff --word-diff=color HEAD
 	ds = diff --staged
 	dsw = diff --staged --ignore-all-space
 	dsww = diff --staged --word-diff=color

@@ -15,11 +15,10 @@ set swapfile
 " see: https://vi.stackexchange.com/a/10125
 filetype plugin indent on
 
-" Indent by 2 spaces by default, and expand <tab> to two spaces, but show
-" pre-existing <tab>s as 4 characters wide
+" Indent by 2 spaces by default, show <tab>s as 4 characters wide
 set shiftwidth=2
 set tabstop=4
-set expandtab
+set noexpandtab
 
 " Disable line wrap by default
 set nowrap
