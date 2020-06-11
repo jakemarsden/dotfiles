@@ -3,7 +3,7 @@
 # see: https://gradle.org/install/#manually
 
 NAME=gradle
-VERSION=6.3
+VERSION=6.4.1
 DISTRIBUTION_TYPE=all
 ZIP_NAME=gradle-"$VERSION"-"$DISTRIBUTION_TYPE".zip
 SUM_NAME="$ZIP_NAME".sha256
