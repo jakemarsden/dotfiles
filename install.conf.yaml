@@ -32,7 +32,7 @@
   - ~/.vim/.backup/
   - ~/.vim/.swap/
   - ~/.youtube-dl/
-  - ~/.youtube-dl/.cache/
+  - ~/.youtube-dl/cache/
 
 - link:
     ~/.profile:

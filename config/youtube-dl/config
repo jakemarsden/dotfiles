@@ -219,14 +219,14 @@
     #                                  may change.
     # --no-cache-dir                   Disable filesystem caching
     # --rm-cache-dir                   Delete all filesystem cache files
---output="%(uploader)s %(upload_date)s %(title)s [%(extractor_key)s-%(id)s] [%(resolution)s].%(ext)s"
+--output="%(uploader)s %(upload_date)s %(title)s [%(extractor_key)s-%(id)s][%(resolution)s].%(ext)s"
 --no-overwrites
 --no-part
 --no-mtime
 --write-description
 --write-info-json
---cookies=~/.youtube-dl/.cookiejar
---cache-dir=~/.youtube-dl/.cache/
+--cookies=~/.youtube-dl/cookiejar
+--cache-dir=~/.youtube-dl/cache/
 
 ## Thumbnail images:
     # --write-thumbnail                Write thumbnail image to disk
