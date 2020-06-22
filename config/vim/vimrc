@@ -98,3 +98,5 @@ augroup vimrc
   autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
   autocmd! BufWritePost $MYGVIMRC if has ('gui_running') | source % | echom "Reloaded " . $MYGVIMRC | endif | redraw
 augroup End
+
+let g:rustfmt_autosave = 1

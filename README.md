@@ -37,12 +37,14 @@ package.
 
 ### Vim
 
+- [cespare/vim-toml](https://github.com/cespare/vim-toml)
 - [farmergreg/vim-lastplace](https://github.com/farmergreg/vim-lastplace)
 - [glts/vim-magnum](https://github.com/glts/vim-magnum)
 - [glts/vim-radical](https://github.com/glts/vim-radical)
 - [itchyny/landscape.vim](https://github.com/itchyny/landscape.vim)
 - [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim)
 - [rakr/vim-one](https://github.com/rakr/vim-one)
+- [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim)
 - [tpope/vim-abolish/](https://github.com/tpope/vim-abolish/)
 - [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
