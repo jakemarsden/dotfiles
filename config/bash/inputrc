@@ -1,0 +1,2 @@
+# Flash the screen when you fuck up, in place of an audible bell
+set bell-style visible

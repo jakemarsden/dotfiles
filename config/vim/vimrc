@@ -43,6 +43,10 @@ set noshowmode
 " Show in-progress normal mode commands under the status bar
 set showcmd
 
+" Flash the screen when you fuck up, in place of an audible bell
+set errorbells
+set visualbell
+
 colorscheme one
 set background=dark
 

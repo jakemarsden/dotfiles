@@ -58,6 +58,10 @@
       path: config/bash/bashrc
       if: |
         command -v bash > /dev/null
+    ~/.inputrc:
+      path: config/bash/inputrc
+      if: |
+        command -v bash > /dev/null
 
     ~/.config/git:
       path: config/git/
