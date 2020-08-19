@@ -16,6 +16,9 @@
 #   - see: https://github.com/anishathalye/dotbot/issues/65
 #   - e.g.:
 # - create:
+#   ~/.filebot/:
+#     if: |
+#       command -v filebot > /dev/null
 #   ~/.vim/.backup/:
 #     if: |
 #       command -v vim > /dev/null
@@ -29,6 +32,7 @@
 #     if: |
 #       command -v youtube-dl > /dev/null
 - create:
+  - ~/.filebot
   - ~/.vim/.backup/
   - ~/.vim/.swap/
   - ~/.youtube-dl/
@@ -63,6 +67,12 @@
       if: |
         command -v bash > /dev/null
 
+    ~/.filebot:
+      path: config/filebot/*
+      glob: true
+      if: |
+        command -v filebot > /dev/null
+
     ~/.config/git:
       path: config/git/
       if: |
@@ -91,7 +101,7 @@
     ~/.config/thefuck:
       path: config/thefuck/*
       glob: true
-      if : |
+      if: |
         command -v thefuck > /dev/null
 
     ~/.vim/pack:
