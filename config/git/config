@@ -13,9 +13,6 @@
 	editor = vim
 	pager = less
 
-[diff]
-	algorithm = histogram
-
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	process = git-lfs filter-process
