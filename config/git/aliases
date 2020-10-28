@@ -22,11 +22,14 @@
 	dw = diff --ignore-all-space
 	dww = diff --word-diff=color
 	f = fetch
-	fa = fetch --all
+	fa = fetch --all --tags
+	fap = fetch --all --tags --prune
+	ff = merge --ff-only
 	fwl = push --force-with-lease
 	l = log
 	ll = log --abbrev-commit --all --boundary --decorate --graph --topo-order --date=short --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
 	rb = rebase
+	rbc = rebase --continue
 	rbi = rebase --interactive
 	s = status --short --untracked-files=all
 	setexe = update-index --chmod=+x
