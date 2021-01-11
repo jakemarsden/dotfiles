@@ -10,6 +10,7 @@
 	caa = commit --amend --no-edit
 	cam = commit --amend --message
 	cho = checkout
+	chop = checkout --patch
 	ci = commit --interactive
 	cm = commit --message
 	d = diff
